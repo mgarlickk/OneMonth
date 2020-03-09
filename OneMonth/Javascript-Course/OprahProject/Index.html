@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Oprah Likes You. And so do other people.</title>
+
+		<style>
+
+			/* Basic CSS comment */
+			body {
+				background: grey;
+				color: white;
+				width: 960px;
+				margin: 0 auto;
+				font-size: 30px;
+				color: black;
+			}
+
+			h1 {
+				font-size: 80px;
+				color: #333	;
+			}
+
+		</style>
+        
+        <body>
+            <img style="display: none" id="BMW" src="images/bmw.webp">
+            <img style="display: none" id="Maserati" src="images/maserati.jpg">
+            <img style="display: none" id="Saab" src="images/saab.jpg">
+	   </body>
+
+		<script>
+
+			/* this is an event */
+			/* alert("I'm annoying"); */
+
+			var username = prompt("Hello, who are you?");
+			var cars = ["BMW", "Saab", "Maserati"];
+            var randomCar = Math.floor(Math.random()*cars.length);
+            var carName = cars[randomCar];
+
+			if (username==="Chris"||username==="Matt") {
+				document.write("<h1>Hello " + username + " you won a " + carName + "!</h1>");
+			}
+            else if (username===""){
+                document.write("No name entered.");
+            }
+			else {
+				document.write("<h1>Hello " + username + "!");
+			}
+
+            var saabImage = document.getElementById("Saab");
+            var bmwImage = document.getElementById("BMW");
+            var maseratiImage = document.getElementById("Maserati");
+            if (username==="Chris"||username==="Matt")
+                if (carName==="Saab"){
+                    saabImage.style.display = "block";
+                }
+                else if (carName==="BMW"){
+                    bmwImage.style.display = "block";
+                }
+                else if (carName==="Maserati"){
+                    maseratiImage.style.display = "block";
+                }
+            
+            console.log(carName)
+            
+		</script>
+
+	</head>
+
+
+
+</html>

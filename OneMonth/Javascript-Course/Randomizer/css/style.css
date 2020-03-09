@@ -1,0 +1,20 @@
+
+body {
+	text-align: center;
+}
+
+.headerText {
+    padding-top: 15vh;
+    font-size: 90px;
+}
+
+.matchupText {
+    font-size: 40pt;
+    padding-top: 150px;;
+}
+
+.vsText {
+    font-weight: bold; 
+    font-size: 30pt; 
+    padding: 50px 0px;
+}
