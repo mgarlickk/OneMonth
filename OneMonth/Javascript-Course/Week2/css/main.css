@@ -1,0 +1,38 @@
+
+body {
+    margin: 0 auto;
+    width: 80%;
+    font-family: calibri;
+}
+.search-bar {
+    width: 500px;
+    height: 15px;
+    padding: 10px;
+    font-size: 15pt;
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.search-button {
+    display: block;
+    background-color: green;
+    border: none;
+    margin-top: 30px;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 16pt;
+    margin: auto;
+}
+
+.search-button:hover {
+    background-color:grey;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.gif-container {
+    
+}
