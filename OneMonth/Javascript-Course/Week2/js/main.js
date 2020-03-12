@@ -4,11 +4,8 @@
 
 
 document.getElementById('js-search').addEventListener('click', function(){
-    
     var inputText = document.getElementById('input-field').value;
-    var gifContainer = document.getElementById('js-gif-container').innerHTML = inputText;
-    
-    
+    pushToDOM(inputText);
 });
 
 
@@ -18,3 +15,7 @@ document.getElementById('js-search').addEventListener('click', function(){
 
 
 /* Show the GIFS */
+
+function pushToDOM(inputText){
+    var gifContainer = document.getElementById('js-gif-container').innerHTML = inputText;
+}
