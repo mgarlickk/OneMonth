@@ -33,6 +33,8 @@ body {
     cursor: pointer;
 }
 
-.gif-container {
-    
+.gifs {
+    width: 33%;
+    display: inline-block;
+    height: 200px;
 }
