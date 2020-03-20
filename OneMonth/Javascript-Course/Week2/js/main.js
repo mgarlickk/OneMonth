@@ -16,11 +16,14 @@ document.getElementById('input-field').addEventListener('keyup', function(e){
     }
 });
 
+
 /* Do the data work with the API */
 
-var url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC";
+var shaqUrl = "http://api.giphy.com/v1/gifs/search?q=shaq&api_key=dc6zaTOxFJmzC";
+var dogsUrl = "http://api.giphy.com/v1/gifs/search?q=dogs&api_key=dc6zaTOxFJmzC";
+
 var GiphyAJAXCall = new XMLHttpRequest();
-GiphyAJAXCall.open('GET', url);
+GiphyAJAXCall.open('GET', shaqUrl);
 GiphyAJAXCall.send();
 
 GiphyAJAXCall.addEventListener('load', function(e){
@@ -29,9 +32,14 @@ GiphyAJAXCall.addEventListener('load', function(e){
     pushToDOM(data);
 });
 
+
 /* Show the GIFS */
 
 function pushToDOM(inputText){
+    
+    if (inputText==="cats"){
+        alert('blah');
+    }
     
     var response = JSON.parse(inputText);
     
@@ -45,7 +53,6 @@ function pushToDOM(inputText){
         
         console.log(src);
     });
-    
     
 }
 
