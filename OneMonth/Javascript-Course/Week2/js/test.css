@@ -1,0 +1,319 @@
+html {
+    font-family: century gothic, Arial, sans-serif;
+    }
+    
+    /* Circles and Value used in Overall Summary Section */
+    
+    .circleTable1and2 {
+        color: white;
+        position: absolute;
+        display: inline-block;
+        margin-left: 9px;
+        margin-top: 2px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: #93278F;
+    }
+    
+    .circleTable3 {
+        color: white;
+        position: absolute;
+        display: inline-block;
+        margin-left: 9px;
+        margin-top: 2px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: #F6921E;
+    }
+    
+    .circleTable4and5 {
+        
+        position: absolute;
+        display: inline-block;
+        margin-left: 9px;
+        margin-top: 2px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: #28AAE1;
+    }
+    
+    .graphValue {
+        padding-top: 2px;
+        padding-left: 8px;
+        color: white;
+        font-size: 16pt;
+        font-weight: bold;
+    }
+
+    
+    /* Tables for the Overall Summary section */
+    
+    .graphBar1Table {border-spacing: 3px; margin-left: 20px; margin-top: 2.5px;}
+    .graphBar1Table td:nth-child(1) { background-color: #93278F; width: 70px; height: 23px;}
+    .graphBar1Table td:nth-child(2) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    .graphBar1Table td:nth-child(3) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    .graphBar1Table td:nth-child(4) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    .graphBar1Table td:nth-child(5) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    
+    .graphBar2Table {border-spacing: 3px; margin-left: 20px; margin-top: 2.5px;}
+    .graphBar2Table td:nth-child(1) { background-color: #93278F; width: 70px; height: 23px;}
+    .graphBar2Table td:nth-child(2) { background-color: #93278F; width: 70px; height: 23px;}
+    .graphBar2Table td:nth-child(3) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    .graphBar2Table td:nth-child(4) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    .graphBar2Table td:nth-child(5) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    
+    .graphBar3Table {border-spacing: 3px; margin-left: 20px; margin-top: 2.5px;}
+    .graphBar3Table td:nth-child(1) { background-color: #F6921E; width: 70px; height: 23px;}
+    .graphBar3Table td:nth-child(2) { background-color: #F6921E; width: 70px; height: 23px;}
+    .graphBar3Table td:nth-child(3) { background-color: #F6921E; width: 70px; height: 23px;}
+    .graphBar3Table td:nth-child(4) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    .graphBar3Table td:nth-child(5) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    
+    .graphBar4Table {border-spacing: 3px; margin-left: 20px; margin-top: 2.5px;}
+    .graphBar4Table td:nth-child(1) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar4Table td:nth-child(2) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar4Table td:nth-child(3) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar4Table td:nth-child(4) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar4Table td:nth-child(5) { background-color: #E6E6E6; width: 70px; height: 23px;}
+    
+    .graphBar5Table {border-spacing: 3px; margin-left: 20px; margin-top: 2.5px;}
+    .graphBar5Table td:nth-child(1) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar5Table td:nth-child(2) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar5Table td:nth-child(3) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar5Table td:nth-child(4) { background-color: #28AAE1; width: 70px; height: 23px;}
+    .graphBar5Table td:nth-child(5) { background-color: #28AAE1; width: 70px; height: 23px;}
+    
+    /* Large circles for Results boxes */
+    
+    .resultsCircleLargePurple {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #93278F;
+        margin-left: 20px;
+    }
+    
+    .resultsCircleLargeOrange{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #F6921E;
+        margin-left: 20px;
+    }
+    
+    .resultsCircleLargeBlue {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #28AAE1;
+        margin-left: 20px;
+    }
+    
+    .graphValueLarge {
+        margin-top: -7px;
+        padding-left: 12px;
+        color: white;
+        font-size: 50pt;
+    }
+    
+    /* Vertical bars used in the Results box */
+    
+    .results1and2VerticalBar1 {
+        display: inline-block;
+        background-color: #93278F;
+        width: 28px;
+        height: 20px;
+        margin-left: 20px;
+    }
+    
+    .results1and2VerticalBar2 {
+        display: inline-block;
+        background-color: #93278F;
+        width: 28px;
+        height: 40px;
+        margin-left: 3px;
+    }
+    
+    .results3VerticalBar1 {
+        display: inline-block;
+        background-color: #F6921E;
+        width: 28px;
+        height: 20px;
+        margin-left: 20px;
+    }
+    
+    .results3VerticalBar2 {
+        display: inline-block;
+        background-color: #F6921E;
+        width: 28px;
+        height: 40px;
+        margin-left: 3px;
+    }
+    
+    .results3VerticalBar3 {
+        display: inline-block;
+        background-color: #F6921E;
+        width: 28px;
+        height: 60px;
+        margin-left: 3px;
+    }
+    
+    .results4and5VerticalBar1 {
+        display: inline-block;
+        background-color: #28AAE1;
+        width: 28px;
+        height: 20px;
+        margin-left: 20px;
+    }
+    
+    .results4and5VerticalBar2 {
+        display: inline-block;
+        background-color: #28AAE1;
+        width: 28px;
+        height: 40px;
+        margin-left: 3px;
+    }
+    
+    .results4and5VerticalBar3 {
+        display: inline-block;
+        background-color: #28AAE1;
+        width: 28px;
+        height: 60px;
+        margin-left: 3px;
+    }
+    
+    .results4and5VerticalBar4 {
+        display: inline-block;
+        background-color: #28AAE1;
+        width: 28px;
+        height: 80px;
+        margin-left: 3px;
+    }
+    
+    .results4and5VerticalBar5 {
+        display: inline-block;
+        background-color: #28AAE1;
+        width: 28px;
+        height: 100px;
+        margin-left: 3px;
+    }
+    
+    .resultsGreyBar2 {
+        display: inline-block;
+        background-color: rgb(165, 164, 164);
+        width: 28px;
+        height: 40px;
+        margin-left: 3px;
+    }
+    
+    .resultsGreyBar3 {
+        display: inline-block;
+        background-color: rgb(165, 164, 164);
+        width: 28px;
+        height: 60px;
+        margin-left: 3px;
+    }
+    
+    .resultsGreyBar4 {
+        display: inline-block;
+        background-color: rgb(165, 164, 164);
+        width: 28px;
+        height: 80px;
+        margin-left: 3px;
+    }
+    
+    .resultsGreyBar5 {
+        display: inline-block;
+        background-color: rgb(165, 164, 164);
+        width: 28px;
+        height: 100px;
+        margin-left: 3px;
+    }
+    
+    /* Add Grey background and padding to Results box */
+    
+    .resultsBox {
+        background-color: rgb(235, 232, 232);
+    }
+    
+    .resultsBox td {
+        padding: 7px 20px 20px 10px;
+    }
+    
+    /* Header properties */
+
+    .headerTable {
+        z-index: -1;
+        position: absolute;
+        display: inline-block;
+        border-top: 50px solid #6A1F45;
+        border-right: 20px solid transparent;
+        width: 50%;
+    }
+    
+    .headerTable2 {
+        z-index: -1;
+        position: absolute;
+        display: inline-block;
+        border-top: 7px solid #6A1F45;
+        width: 100%;
+    }
+    
+    .headerReportName {
+        padding-bottom: 20px;
+    }
+    
+    /* Create Vertical Labels for the Overall Summary page */
+    .verticalLabels {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg)
+    }
+
+    /* Create cross Indicator */
+
+    .crossIndicator {
+        width: 15px;
+        height: 15px;
+        position: relative;
+     }
+     .crossIndicator:before, .crossIndicator:after {
+       content: "";
+       position: absolute;
+       z-index: -1;
+       background: #6A1C44;
+     }
+     /* vertical bar */
+     .crossIndicator:before {
+       left: 50%;
+       width: 30%;
+       height: 80%;
+       margin-left: -7%;
+     }
+     /* horizontal bar */
+     .crossIndicator:after {
+       height: 16%;
+       width: 100%;
+       bottom: 50%;
+       right: -6%;
+     }
+     
+     .circleIndicator {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: solid 1px #6A1C44;
+     }
+
+     .indicatorsStatementsTable td:nth-child(2) {
+         padding: 3px;
+     }
+
+    .report-widget-page-break {
+         display: none;
+}
