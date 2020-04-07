@@ -44,7 +44,6 @@ function pushToDOM(inputText){
     
     imageUrls.forEach(function(image){
         var src = image.images.fixed_height.url;
-        console.log(src);
         var gifContainer = document.getElementById('js-gif-container');
         element = gifContainer.innerHTML += "<img src=\""+src+"\" class=\"gifs\">";
     });
