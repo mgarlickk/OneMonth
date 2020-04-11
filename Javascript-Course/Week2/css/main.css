@@ -3,6 +3,7 @@ body {
     margin: 0 auto;
     width: 80%;
     font-family: calibri;
+    background-color: black;
 }
 .search-bar {
     width: 500px;

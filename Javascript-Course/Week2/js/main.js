@@ -23,6 +23,7 @@ var trendingUrl = "https://api.giphy.com/v1/gifs/trending?api_key=STOPsEqOA089eU
 var catsUrl = "http://api.giphy.com/v1/gifs/search?q=cats&api_key=dc6zaTOxFJmzC";
 var dogsUrl = "http://api.giphy.com/v1/gifs/search?q=dogs&api_key=dc6zaTOxFJmzC";
 
+
 var GiphyAJAXCall = new XMLHttpRequest();
 GiphyAJAXCall.open('GET', trendingUrl);
 GiphyAJAXCall.send();
@@ -37,6 +38,10 @@ GiphyAJAXCall.addEventListener('load', function(e){
 
 function pushToDOM(inputText){
     
+    if (inputText==='cats'){
+        alert('testing');
+    }
+    
     // Clean up data into an object
     var response = JSON.parse(inputText);
     
@@ -45,10 +50,11 @@ function pushToDOM(inputText){
     imageUrls.forEach(function(image){
         var src = image.images.fixed_height.url;
         var gifContainer = document.getElementById('js-gif-container');
-        element = gifContainer.innerHTML += "<img src=\""+src+"\" class=\"gifs\">";
+        gifContainer.innerHTML += "<img src=\""+src+"\" class=\"gifs\">";
     });
                 
 }
+
 
 
 
