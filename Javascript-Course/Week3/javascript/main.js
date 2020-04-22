@@ -13,7 +13,7 @@ SC.initialize({
 
 // find all sounds of buskers licensed under 'creative commons share alike'
 SC.get('/tracks', {
-  q: 'blink-182', titl: 'all the small things'
+  q: 'big bootie'
 }).then(function(tracks) {
   console.log(tracks);
 });
