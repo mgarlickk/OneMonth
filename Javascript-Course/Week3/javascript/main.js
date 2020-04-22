@@ -31,25 +31,29 @@ SoundCloudAPI.getTrack('zedd');
 
 /* 3. Display the cards */
 
-var card = document.createElement('div');
-card.classList.add('card');
+SoundCloudAPI.renderTracks = function(){
 
-var addCard = document.querySelector('.js-search-results');
-addCard.appendChild(card);
+    var card = document.createElement('div');
+    card.classList.add('card');
 
-var imgDiv = document.createElement('div');
-imgDiv.classList.add('image');
-imgDiv.classList.add('testing');
+    var addCard = document.querySelector('.js-search-results');
+    addCard.appendChild(card);
 
-var addImgDiv = document.querySelector('.card:nth-child(2)');
-addImgDiv.appendChild(imgDiv);
+    var imgDiv = document.createElement('div');
+    imgDiv.classList.add('image');
+    imgDiv.classList.add('testing');
 
-var catImage = document.createElement('div');
-catImage.classList.add('image_img');
+    var addImgDiv = document.querySelector('.card:nth-child(2)');
+    addImgDiv.appendChild(imgDiv);
 
-var addCatImage = document.querySelector('.testing');
-addImgDiv.appendChild(imgDiv);
+    var catImg = document.createElement('img');
+    catImg.classList.add('image_img');
+    catImg.src = 'http://www.placekitten.com/290/290';
 
+    var addCatImg = document.querySelector('.testing');
+    addCatImg.appendChild(catImg);
+}
 
+SoundCloudAPI.renderTracks();
 
 /* 4. Add to playlist and play */
