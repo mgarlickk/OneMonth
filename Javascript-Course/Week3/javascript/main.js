@@ -33,25 +33,49 @@ SoundCloudAPI.getTrack('zedd');
 
 SoundCloudAPI.renderTracks = function(){
 
+    // Add first child Card
     var card = document.createElement('div');
     card.classList.add('card');
-
     var addCard = document.querySelector('.js-search-results');
     addCard.appendChild(card);
-
+    
+    // Add div for the image
     var imgDiv = document.createElement('div');
     imgDiv.classList.add('image');
     imgDiv.classList.add('testing');
-
     var addImgDiv = document.querySelector('.card:nth-child(2)');
     addImgDiv.appendChild(imgDiv);
 
+    // Add the image to the above div
     var catImg = document.createElement('img');
     catImg.classList.add('image_img');
     catImg.src = 'http://www.placekitten.com/290/290';
-
     var addCatImg = document.querySelector('.testing');
     addCatImg.appendChild(catImg);
+
+    // Add the content div
+    var imgContent = document.createElement('div');
+    imgContent.classList.add('content');
+    imgContent.classList.add('testing2');
+    var addImgContent = document.querySelector('.card:nth-child(2)');
+    addImgContent.appendChild(imgContent);
+    
+    // Add the div for the link
+    var imgContentChild = document.createElement('div');
+    imgContentChild.classList.add('header');
+    imgContentChild.classList.add('testing3');
+    var addImgContentChild = document.querySelector('.testing2');
+    addImgContentChild.appendChild(imgContentChild);
+    
+    // Add the link to the above div
+    var songLink = document.createElement('a');
+    songLink.innerHTML = '-Song Name Here-';
+    songLink.href = 'https://soundcloud.com/barsuk-records/rilo-kiley-science-vs-romance';
+    songLink.target = '_blank';
+    var addSongLink = document.querySelector('.testing3');
+    addSongLink.appendChild(songLink);
+    
+    
 }
 
 SoundCloudAPI.renderTracks();
