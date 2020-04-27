@@ -18,81 +18,72 @@ SoundCloudAPI.init = function(){
 SoundCloudAPI.init();
 
 SoundCloudAPI.getTrack = function(inputValue){
-    // find all sounds of buskers licensed under 'creative commons share alike'
+    // find tracks
     SC.get('/tracks', {
       q: inputValue
     }).then(function(tracks) {
-      console.log(tracks);
+    console.log(inputValue);
+    console.log(tracks);
+    SoundCloudAPI.renderTracks(tracks);
     });
 };
 
 
-SoundCloudAPI.getTrack('zedd');
+SoundCloudAPI.getTrack('rilo kiley');
 
 /* 3. Display the cards */
 
-SoundCloudAPI.renderTracks = function(){
-
-    // Add first child Card
-    var card = document.createElement('div');
-    card.classList.add('card');
-    var addCard = document.querySelector('.js-search-results');
-    addCard.appendChild(card);
-
-    // Add div for the image
-    var imgDiv = document.createElement('div');
-    imgDiv.classList.add('image');
-    imgDiv.classList.add('testing');
-    var addImgDiv = document.querySelector('.card:nth-child(2)');
-    addImgDiv.appendChild(imgDiv);
-
-    // Add the image to the above div
-    var catImg = document.createElement('img');
-    catImg.classList.add('image_img');
-    catImg.src = 'http://www.placekitten.com/290/290';
-    var addCatImg = document.querySelector('.testing');
-    addCatImg.appendChild(catImg);
-
-    // Add the content div
-    var imgContent = document.createElement('div');
-    imgContent.classList.add('content');
-    imgContent.classList.add('testing2');
-    var addImgContent = document.querySelector('.card:nth-child(2)');
-    addImgContent.appendChild(imgContent);
-    
-    // Add the div for the link
-    var imgContentChild = document.createElement('div');
-    imgContentChild.classList.add('header');
-    imgContentChild.classList.add('testing3');
-    var addImgContentChild = document.querySelector('.testing2');
-    addImgContentChild.appendChild(imgContentChild);
-    
-    // Add the link to the above div
-    var songLink = document.createElement('a');
-    songLink.innerHTML = '-Song Name Here-';
-    songLink.href = 'https://soundcloud.com/barsuk-records/rilo-kiley-science-vs-romance';
-    songLink.target = '_blank';
-    var addSongLink = document.querySelector('.testing3');
-    addSongLink.appendChild(songLink);
-    
-    // Add div for button
-    var playlistButton = document.createElement('div');
-    playlistButton.classList.add('ui', 'bottom', 'attached', 'button', 'js-button', 'testing4');
-    var addPlaylistButton = document.querySelector('.card:nth-child(2)');
-    addPlaylistButton.appendChild(playlistButton);
-    
-    // Add icon and text to button
-    var playlistIcon = document.createElement('i');
-    playlistIcon.classList.add('add', 'icon');
-    var playlistText = document.createElement('span');
-    playlistText.innerHTML = 'Add to playlist';
-    var addPlaylistIcon = document.querySelector('.testing4');
-    addPlaylistIcon.append(playlistIcon, playlistText);
+SoundCloudAPI.renderTracks = function(tracks){
 
     
-    
+    tracks.forEach(function(track){
+        // Add first child Card
+        var searchResults = document.querySelector('.js-search-results');
+        var card = document.createElement('div');
+        card.classList.add('card');
+
+
+        // Add div for the image
+        var imgDiv = document.createElement('div');
+        imgDiv.classList.add('image');
+
+        // Add the image to the above div
+        var image_img = document.createElement('img');
+        image_img.classList.add('image_img');
+        if (track.artwork_url != null){
+        image_img.src = track.artwork_url;
+        } else {image_img.src = 'http://lorempixel.com/g/400/200/'
+        };
+
+
+        // Add the content div
+        var cardContent = document.createElement('div');
+        cardContent.classList.add('content');
+
+        var cardHeader = document.createElement('div');
+        cardHeader.classList.add('header');
+        cardHeader.innerHTML = '<a class="header" target="_blank" href=' + track.permalink_url + '>' + track.title + '</a>';
+
+        // Add div for button
+        var playlistButton = document.createElement('div');
+        playlistButton.classList.add('ui', 'bottom', 'attached', 'button', 'js-button');
+
+        // Add icon and text to button
+        var playlistIcon = document.createElement('i');
+        playlistIcon.classList.add('add', 'icon');
+        var playlistButtonText = document.createElement('span');
+        playlistButtonText.innerHTML = 'Add to playlist';
+
+
+        //Add the various child elements created abvove (note that append is not supported in IE)
+        searchResults.appendChild(card);
+        card.append(imgDiv, cardContent, playlistButton);
+        cardContent.appendChild(cardHeader);
+        imgDiv.appendChild(image_img);
+        playlistButton.append(playlistIcon, playlistButtonText);
+    });
 };
 
-SoundCloudAPI.renderTracks();
+
 
 /* 4. Add to playlist and play */
