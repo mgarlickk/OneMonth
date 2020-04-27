@@ -6,8 +6,8 @@
 
 /* 2. Query Soundcloud API */
 
-
-var SoundCloudAPI = {}
+// Create SoundCloudAPI object
+var SoundCloudAPI = {};
 
 SoundCloudAPI.init = function(){
     SC.initialize({
@@ -38,7 +38,7 @@ SoundCloudAPI.renderTracks = function(){
     card.classList.add('card');
     var addCard = document.querySelector('.js-search-results');
     addCard.appendChild(card);
-    
+
     // Add div for the image
     var imgDiv = document.createElement('div');
     imgDiv.classList.add('image');
@@ -75,8 +75,23 @@ SoundCloudAPI.renderTracks = function(){
     var addSongLink = document.querySelector('.testing3');
     addSongLink.appendChild(songLink);
     
+    // Add div for button
+    var playlistButton = document.createElement('div');
+    playlistButton.classList.add('ui', 'bottom', 'attached', 'button', 'js-button', 'testing4');
+    var addPlaylistButton = document.querySelector('.card:nth-child(2)');
+    addPlaylistButton.appendChild(playlistButton);
     
-}
+    // Add icon and text to button
+    var playlistIcon = document.createElement('i');
+    playlistIcon.classList.add('add', 'icon');
+    var playlistText = document.createElement('span');
+    playlistText.innerHTML = 'Add to playlist';
+    var addPlaylistIcon = document.querySelector('.testing4');
+    addPlaylistIcon.append(playlistIcon, playlistText);
+
+    
+    
+};
 
 SoundCloudAPI.renderTracks();
 
