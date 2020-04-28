@@ -2,6 +2,12 @@
 
 
 
+document.querySelector('.js-submit').addEventListener('click', function(){
+    var searchValue = document.querySelector('.input-search').value;
+    console.log(searchValue);
+    return searchValue;
+});
+
 
 
 /* 2. Query Soundcloud API */
@@ -22,14 +28,14 @@ SoundCloudAPI.getTrack = function(inputValue){
     SC.get('/tracks', {
       q: inputValue
     }).then(function(tracks) {
-    console.log(inputValue);
     console.log(tracks);
     SoundCloudAPI.renderTracks(tracks);
     });
 };
 
+SoundCloudAPI.getTrack('big bootie');
 
-SoundCloudAPI.getTrack('rilo kiley');
+
 
 /* 3. Display the cards */
 
@@ -52,8 +58,7 @@ SoundCloudAPI.renderTracks = function(tracks){
         image_img.classList.add('image_img');
         if (track.artwork_url != null){
         image_img.src = track.artwork_url;
-        } else {image_img.src = 'http://lorempixel.com/g/400/200/'
-        };
+        } else {image_img.src = 'http://lorempixel.com/g/400/200/'};
 
 
         // Add the content div
@@ -75,15 +80,48 @@ SoundCloudAPI.renderTracks = function(tracks){
         playlistButtonText.innerHTML = 'Add to playlist';
 
 
-        //Add the various child elements created abvove (note that append is not supported in IE)
+        // Add the various child elements created abvove (note that append is not supported in IE)
         searchResults.appendChild(card);
         card.append(imgDiv, cardContent, playlistButton);
         cardContent.appendChild(cardHeader);
         imgDiv.appendChild(image_img);
         playlistButton.append(playlistIcon, playlistButtonText);
+        // Add selected song to playlist
+        playlistButton.addEventListener('click', function(){
+            SoundCloudAPI.embed(track.permalink_url);
+        });
     });
 };
 
 
 
 /* 4. Add to playlist and play */
+
+SoundCloudAPI.embed = function(trackURL){
+        SC.oEmbed(trackURL, {
+        auto_play: false
+    }).then(function(embed){
+        console.log('oEmbed response: ', embed);
+
+        var sideBar = document.querySelector('.js-playlist');
+        
+        // Embed the html aka iFram with for the song
+        var playlistBox = document.createElement('div');
+        playlistBox.innerHTML = embed.html;
+        // Add the playlist box as the first element
+        sideBar.insertBefore(playlistBox, sideBar.firstChild);
+            
+        localStorage.setItem('key', sideBar.innerHTML);
+        // To clear storage > localStorage.clear();
+    
+    });
+};
+
+var sideBar = document.querySelector('.js-playlist');
+sideBar.innerHTML = localStorage.getItem('key');
+
+
+
+
+
+
