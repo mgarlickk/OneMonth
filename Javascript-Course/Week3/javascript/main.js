@@ -1,13 +1,20 @@
 /* 1. Search */
 
 
+var UI = {};
 
-document.querySelector('.js-submit').addEventListener('click', function(){
-    var searchValue = document.querySelector('.input-search').value;
-    console.log(searchValue);
-    return searchValue;
-});
+// UI.EnterPress = 
+    
+UI.MouseClick = function(){
+    document.querySelector('.js-submit').addEventListener('click',function(){
+        var searchValue = document.querySelector('.input-search').value;
+        var searchResults = document.querySelector('.js-search-results').innerHTML = "";
+        SoundCloudAPI.getTrack(searchValue);
+        
+})};
 
+
+UI.MouseClick()
 
 
 /* 2. Query Soundcloud API */
@@ -33,7 +40,7 @@ SoundCloudAPI.getTrack = function(inputValue){
     });
 };
 
-SoundCloudAPI.getTrack('big bootie');
+
 
 
 
@@ -112,13 +119,14 @@ SoundCloudAPI.embed = function(trackURL){
         sideBar.insertBefore(playlistBox, sideBar.firstChild);
             
         localStorage.setItem('key', sideBar.innerHTML);
-        // To clear storage > localStorage.clear();
+        
     
     });
 };
 
 var sideBar = document.querySelector('.js-playlist');
 sideBar.innerHTML = localStorage.getItem('key');
+// To clear storage > localStorage.clear();
 
 
 
