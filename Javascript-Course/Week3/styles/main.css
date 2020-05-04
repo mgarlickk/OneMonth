@@ -65,7 +65,16 @@ html, body {
     margin-top: 30px;
 }
 
-.playlist-box {
-    height: 20%;
-    width: 100px;
+#soundcloud-player .clear-playlist {
+    width: 10%;
+    height: 4%;
+    margin-top: .7%;
+    margin-left: 1%;
+    position: absolute;
+    border-radius: 5px;
 }
+
+#soundcloud-player .clear-playlist:hover {
+    background-color: lightgray;
+}
+

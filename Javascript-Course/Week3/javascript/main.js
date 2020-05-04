@@ -1,20 +1,40 @@
 /* 1. Search */
 
-
 var UI = {};
 
 // UI.EnterPress = 
-    
 UI.MouseClick = function(){
     document.querySelector('.js-submit').addEventListener('click',function(){
         var searchValue = document.querySelector('.input-search').value;
-        var searchResults = document.querySelector('.js-search-results').innerHTML = "";
         SoundCloudAPI.getTrack(searchValue);
-        
+        var clearSearchResults = document.querySelector('.js-search-results').innerHTML = "";
 })};
 
-
 UI.MouseClick()
+
+UI.EnterPress = function(){
+    document.querySelector('.input-search').addEventListener('keyup',function(e){
+        if(e.keyCode===13){
+            var searchValue = document.querySelector('.input-search').value;
+            SoundCloudAPI.getTrack(searchValue);
+            var clearSearchResults = document.querySelector('.js-search-results').innerHTML = "";
+        }
+})};
+
+UI.EnterPress()
+
+
+// UI.ClearPlaylist
+UI.ClearPlaylist = function(){
+    document.getElementById('clear-playlist').addEventListener('click', function(){
+        localStorage.clear();
+        var clearSearchResults = document.querySelector('.js-playlist').innerHTML = "";
+})};
+
+UI.ClearPlaylist()
+
+
+
 
 
 /* 2. Query Soundcloud API */
@@ -124,9 +144,12 @@ SoundCloudAPI.embed = function(trackURL){
     });
 };
 
+
+
 var sideBar = document.querySelector('.js-playlist');
 sideBar.innerHTML = localStorage.getItem('key');
-// To clear storage > localStorage.clear();
+
+
 
 
 
