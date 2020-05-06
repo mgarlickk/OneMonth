@@ -2,12 +2,16 @@
 
 var UI = {};
 
+function clearSearchResults(){
+    var clearSearchResults = document.querySelector('.js-search-results').innerHTML = "";
+}
+
 // UI.EnterPress = 
 UI.MouseClick = function(){
     document.querySelector('.js-submit').addEventListener('click',function(){
         var searchValue = document.querySelector('.input-search').value;
         SoundCloudAPI.getTrack(searchValue);
-        var clearSearchResults = document.querySelector('.js-search-results').innerHTML = "";
+        clearSearchResults()
 })};
 
 UI.MouseClick()
@@ -17,7 +21,7 @@ UI.EnterPress = function(){
         if(e.keyCode===13){
             var searchValue = document.querySelector('.input-search').value;
             SoundCloudAPI.getTrack(searchValue);
-            var clearSearchResults = document.querySelector('.js-search-results').innerHTML = "";
+            clearSearchResults()
         }
 })};
 
@@ -27,8 +31,8 @@ UI.EnterPress()
 // UI.ClearPlaylist
 UI.ClearPlaylist = function(){
     document.getElementById('clear-playlist').addEventListener('click', function(){
+        var clearPlaylist = document.querySelector('.js-playlist').innerHTML = "";
         localStorage.clear();
-        var clearSearchResults = document.querySelector('.js-playlist').innerHTML = "";
 })};
 
 UI.ClearPlaylist()
