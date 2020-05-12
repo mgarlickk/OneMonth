@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Select List</title>
+    </head>
+
+    <body>
+        <div class="row header">
+            <h1>Welcome</h1>
+        </div>
+            <div class="row gear">
+        </div>
+        
+        
+    <script>
+        
+        var gearDiv = document.querySelector('.gear');
+        var newSelect =document.createElement('select');
+        var firstOption = document.createElement('option');
+        var optionList = ['one', 'two', 'three'];
+        firstOption.text = 'Choose one';
+        gearDiv.appendChild(newSelect);
+        newSelect.appendChild(firstOption);
+        
+        /*
+        for(var i = 0; i < optionList.length; i++){
+            var options = optionList[i];
+            var newOptions = document.createElement('option');
+            newOptions.text = options;
+            newOptions.value = options;
+            newSelect.appendChild(newOptions);
+        }
+        */
+        
+        optionList.forEach(function(options){
+            console.log(options);
+            var newOptions = document.createElement('option');
+            newOptions.text = options;
+            newOptions.value = options;
+            newSelect.appendChild(newOptions)
+        })
+        
+        var arr = ['Wall-E', 'Up', 'Coco'];
+        
+    </script>
+    </body>
+</html>
