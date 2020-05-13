@@ -24,8 +24,8 @@ var publicWoWSpreadsheet = 'https://docs.google.com/spreadsheets/d/1MBf8yFVXd6jt
             var newSelect = document.createElement('select');
             var defaultOption = document.createElement('option');
             var newOptions = document.createElement('option');
-            var gearList = [data.GearList]
-            newSelect.classList.add('gear-selects')
+            var gearList = [data.GearList];
+            newSelect.classList.add('gear-selects');
             defaultOption.text = data.GearLeft;
             if(data.GearLeft != ''){
                 leftGear.appendChild(newSelect);
@@ -33,9 +33,10 @@ var publicWoWSpreadsheet = 'https://docs.google.com/spreadsheets/d/1MBf8yFVXd6jt
 
             }
             gearList.forEach(function(gear){
-                newSelect.appendChild(newOptions); 
+                console.log(gear);
                 newOptions.text = gear;
-             })
+                newSelect.appendChild(newOptions); 
+             });
             
         });
         
