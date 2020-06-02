@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 stripe.api_key = 'sk_test_VjXb9xl2zuKvVXF5HDiQSQIz00ifghfkOC'
 
-@app.route('/checkout')
+@app.route('/')
 def checkout():
     intent = stripe.PaymentIntent.create(
     amount=1099,
