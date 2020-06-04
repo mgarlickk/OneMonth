@@ -24,3 +24,13 @@ def top_250():
 @app.route('/genre')
 def genres():
     return render_template('genres.html', genres=genres)
+
+@app.route('/genres')
+def json():
+    return render_template('genres.html')
+
+#background process happening without any refreshing
+@app.route('/background_process_test')
+def background_process_test():
+    print ("Hello")
+    return ("nothing")
