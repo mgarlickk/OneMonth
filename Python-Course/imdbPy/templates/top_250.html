@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% include 'header.html' %}
+<html>
+    <head>
+        <title>IMDb Top 250</title>
+  </head>
+    <body>
+        <div class="container">
+            <ol>
+            {% for movie in top_250 %}
+                <li>{{movie}}</li><br>
+            {% endfor %}
+        </ol>
+        </div>
+    </body>
+</html>

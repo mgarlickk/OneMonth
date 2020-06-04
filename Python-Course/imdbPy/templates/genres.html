@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% include 'header.html' %}
+<html>
+    <head>
+        <title>Matt IMDb</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h3>Test</h3>
+                <form>
+                    <a href='#'' id='test'><button onclick="testing()" class='btn btn-default'>Test</button></a>
+                </form>
+        
+        </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function testing() {
+                
+                $('a#test').bind('click', function() {
+                $.getJSON('/background_process_test',
+                    function(data) {
+                    document.write('test')
+                });
+                return false;
+                });
+            });
+    </script>
+    </body>
+</html>

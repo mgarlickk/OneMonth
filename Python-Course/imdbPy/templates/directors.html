@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% include 'header.html' %}
+<html>
+    <head>
+        <title>Matt IMDb</title>
+    </head>
+    <body>
+        <div class="container">
+            {% for director in directors %}
+                {{director}}
+            {% endfor %}
+        </div>
+    </body>
+</html>
