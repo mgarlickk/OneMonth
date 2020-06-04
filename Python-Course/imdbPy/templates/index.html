@@ -1,14 +1,11 @@
+{% include 'header.html' %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Matt IMDb</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    </head>
+  </head>
     <body>
-        <button>Click for 250</button>
-        {% for movie in top_250 %}
-            {{movie}}<br>>
-        {% endfor %}
+        <div class="container">test</div>
     </body>
 </html>

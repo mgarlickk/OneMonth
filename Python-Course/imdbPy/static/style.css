@@ -1,4 +1,30 @@
+* {
+    font-size: 16pt;
+    margin: 0px;
+    font-family: calibri, arial, sans-serif;
+}
 
-html {
-    background-color: grey;
+
+.filter-btns {
+    text-decoration: none;
+}
+
+.filter-btns:hover {
+    border-bottom: 1px solid black;
+}
+
+.header-nav {
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.header-option {
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    flex-grow: 5;
+    justify-content: center;
 }

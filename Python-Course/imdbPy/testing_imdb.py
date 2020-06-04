@@ -1,10 +1,7 @@
 from imdb import IMDb
 ia = IMDb()
 
-top = ia.get_top250_movies()
-
-def get_top_250():
-    for movie in top:
-        print(movie)
-
-get_top_250()
+people = ia.search_person('test')
+len(people)
+for person in people:
+    print(person)

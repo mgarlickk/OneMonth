@@ -5,20 +5,22 @@ app = Flask(__name__)
 ia = IMDb()
 
 movie = ia.get_movie('0133093')
-directors = movie['directors']
+directors_list = movie['directors']
 top = ia.get_top250_movies()
-def get_movie():
-    return str(movie)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', movie=get_movie())
+    return render_template('index.html', movie=movie)
 
 @app.route('/directors')
 def directors():
-    return render_template('directors.html', directors=directors)
+    return render_template('directors.html', directors=directors_list)
 
 @app.route('/top_250')
 def top_250():
     return render_template('top_250.html', top_250=top)
+
+@app.route('/genre')
+def genres():
+    return render_template('genres.html', genres=genres)
