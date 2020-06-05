@@ -1,5 +1,6 @@
 from imdb import IMDb
 from flask import Flask, render_template, request
+
 app = Flask(__name__)
 # create an instance of the IMDb class
 ia = IMDb()
@@ -29,8 +30,5 @@ def genres():
 def json():
     return render_template('genres.html')
 
-#background process happening without any refreshing
-@app.route('/background_process_test')
-def background_process_test():
-    print ("Hello")
-    return ("nothing")
+
+

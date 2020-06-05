@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matt IMDb</title>
+    </head>
+    <body>
+        <div class="container">
+            <ol>
+            {% for movie in movies %}
+                <li>{{movie}}</li>
+            {% endfor %}
+            </ol>
+        </div>
+    </body>
+</html>
