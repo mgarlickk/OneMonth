@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-{% include 'header.html' %}
-<html>
-    <head>
-        <title>Matt IMDb</title>
-    </head>
-    <body>
-        <div class='container'>
-            <h3>Test</h3>
-        </div>
+{% extends 'base.html' %}
+{% block title %}Genres{% endblock %}
 
-    </body>
-</html>
+{% block content %}
+            <ol>
+                {% for result in keywords %}
+                <li>{{ result }}</li>
+                {% endfor %}
+            </ol>
+{% endblock %}

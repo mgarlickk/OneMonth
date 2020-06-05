@@ -4,27 +4,8 @@
     font-family: calibri, arial, sans-serif;
 }
 
-
-.filter-btns {
-    text-decoration: none;
+.contaner {
+    display: inline;
 }
 
-.filter-btns:hover {
-    border-bottom: 1px solid black;
-}
 
-.header-nav {
-    text-align: center;
-    padding-top: 50px;
-    margin-bottom: 50px;
-}
-
-.header-option {
-    margin: 20px;
-}
-
-.container {
-    display: flex;
-    flex-grow: 5;
-    justify-content: center;
-}

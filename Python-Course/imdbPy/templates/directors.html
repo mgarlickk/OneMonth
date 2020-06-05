@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-{% include 'header.html' %}
-<html>
-    <head>
-        <title>Matt IMDb</title>
-    </head>
-    <body>
-        <div class="container">
-            {% for director in directors %}
-                {{director}}
-            {% endfor %}
-        </div>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Directors{% endblock %}
+
+{% block content %}
+    <form action="#" method="post">
+        <p>Name:</p>
+        <p><input type="text" name="nm"></p>
+        <p><input type="submit" name="submit"></p>
+    </form>
+    <ol>
+    {% for director in directors %}
+        <li>{{director}}</li>
+    {% endfor %}
+    </ol>
+{% endblock %}

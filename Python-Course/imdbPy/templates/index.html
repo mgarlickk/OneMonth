@@ -1,11 +1,2 @@
-{% include 'header.html' %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Matt IMDb</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-    <body>
-        <div class="container">test</div>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Matts IMDb{% endblock %}
