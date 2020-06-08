@@ -11,17 +11,24 @@ mydb = mysql.connector.connect(
   passwd="",
   database="IMDb"
 )
-print(mydb)
-mycursor = mydb.cursor()
 
-mycursor.execute("SELECT title, genre FROM Movies where Year > 2005 and Rating > 8")
+#user_search = 'fast'
+#genre_search = 'crime'
+#mycursor = mydb.cursor()
+#sql_query = "SELECT * FROM Movies WHERE Title like %s and Genre like %s"
+#value = ('%' + user_search + '%', '%' + genre_search + '%',)
+#mycursor.execute(sql_query, value)
+#myresult = mycursor.fetchall()
+#for x in myresult:
+#    print(x)
 
-myresult = mycursor.fetchall()
-
-for x in myresult:
-  print(x)
-
-@app.route('/testing')
+@app.route('/', methods=['POST', 'GET'])
 def testing():
-    movies = myresult
-    return render_template('testing.html', movies=movies)
+    user_search = request.form.get('nm')
+    # genre_search = request.form.get('genre')
+    mycursor = mydb.cursor()
+    sql_query = "SELECT * FROM Movies WHERE Title like %s"
+    value = ('%' + user_search + '%', )
+    mycursor.execute(sql_query, value)
+    myresult = mycursor.fetchall()
+    return render_template('testing.html', movies=myresult)
