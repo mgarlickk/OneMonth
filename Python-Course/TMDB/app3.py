@@ -15,8 +15,7 @@ def index():
     user_search = request.form.get('nm')
     search = tmdb.Search()
     response = search.movie(query=user_search)
-    poster_base = 'http://image.tmdb.org/t/p/w185'
-    return render_template('TMDB_testing.html', movies=search.results, last_search=user_search, 
-                            poster_base=poster_base)
+    poster_base = 'http://image.tmdb.org/t/p/w300'
+    return render_template('TMDB_testing.html', movies=search.results, last_search=user_search, poster_base=poster_base)
 
 
