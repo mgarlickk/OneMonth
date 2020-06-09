@@ -7,12 +7,16 @@ app = Flask(__name__)
 
 tmdb.API_KEY = '5de7a0eee27b6eae8c0e543c8ac33ed8'
 
-search = tmdb.Search()
-response = search.movie(query='Ocean''s')
-search_results = search.results
-for s in search_results:
-    print(s['title'], s['id'], s['release_date'], s['popularity'])
+#for s in search.results:
+#    print(s['video'], s['title'], s['id'], s['release_date'], s['popularity'])
 
-@app.route('/TMDB_testing')
+@app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('TMDB_testing.html', result=search.results)
+    user_search = request.form.get('nm')
+    search = tmdb.Search()
+    response = search.movie(query=user_search)
+    poster_base = 'http://image.tmdb.org/t/p/w185'
+    return render_template('TMDB_testing.html', movies=search.results, last_search=user_search, 
+                            poster_base=poster_base)
+
+

@@ -1,11 +1,16 @@
-* {
-    font-size: 16pt;
-    margin: 0px;
-    font-family: calibri, arial, sans-serif;
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.contaner {
-    display: inline;
+.box {
+    flex-basis: 30%;
+    justify-content: start;
+}
+
+.box:nth-child(even){
+    background-color: cyan;
 }
 
 
