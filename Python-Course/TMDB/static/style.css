@@ -5,7 +5,6 @@
 }
 
 body {
-    z-index: -1;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url("hot_fuzz.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,11 +15,10 @@ input:focus {
     outline: none;
 }
 
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    z-index: 1;
-    
 }
 
 .search_bar {
@@ -37,18 +35,35 @@ input:focus {
 
 .search_form {
     flex-basis: 100%;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .box {
     flex-basis: 33%;
     margin-bottom: 20px;
+    justify-content: center;
+}
+
+.poster {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.poster:hover {
+    transform: scale(.95);
+    transition: transform 0.5s, opacity 0.3s;
+    opacity: 1;
+}
+
+.info {
+    width: 90%;
 }
 
 .movie_info {
     font-size: 18pt;
+}
 
+.movie_overview {
+    justify-content: bottom;
 }
 
 .search_btn {
@@ -74,4 +89,18 @@ input:focus {
     background-color: white;
     color: black;
     border: solid 1px black;
+    transition: .4s;
 }
+
+@media only screen and (max-width: 1400px) {
+    .poster {
+      width: 250px;
+      height: 300px;
+    }
+    .container {
+    }
+    .box {
+        flex-basis: 25%
+    }
+
+  }
