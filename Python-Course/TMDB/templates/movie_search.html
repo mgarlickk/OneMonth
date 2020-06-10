@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Matt IMDb</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block content %}
         <div class="container">
             <form action="#" method="post" class="search_form">
                 <p><input required class="search_bar" type="text" name="nm" placeholder="Search By Title..."></p>
                 <p><input class="search_btn" type="submit" name="submit" value="Search"></p>
                 <p>Last Search - "{{ last_search }}"</p>
             </form>
-            
                 {% for result in movies %}
                 <div class="box">
                     {% if result['poster_path'] != None %}
@@ -21,7 +14,7 @@
                         <img class="poster" src="/static/placeholder_image_med.png">
                     {% endif %}
                     <div class="info">
-                        <div class="movie_info">{{result['title']}} | {{result['vote_average']}}</div>
+                        <div class="movie_title_rating">{{result['title']}} | {{result['vote_average']}}</div>
                         <button class="overview_btn" id="show_overview" onclick="showOverview()">Overview</button>
                         <div style="display: none" id="overview" class="overview">{{result['overview']}}</div>
                     </div>
@@ -30,10 +23,10 @@
             </div>
         </div>
         <script>
-            count_movie_overview = document.getElementsByClassName('overview');
-            console.log(count_movie_overview.length);
-            for (movie in count_movie_overview){
-                function showOverview(){
+            count_movies = document.getElementsByClassName('overview');
+            console.log(count_movies.length);
+            function showOverview(){
+                for (movie in count_movies){
                     var movie_overview = document.querySelector('.overview');
                     if (movie_overview.style.display === 'none'){
                         movie_overview.style.display = 'block';
@@ -42,7 +35,6 @@
                     }
                 }
             }
-            // count_movie_overview.forEach(showOverview)
+            //count_movies.forEach(showOverview)
         </script>
-    </body>
-</html>
+{% endblock %}

@@ -1,7 +1,7 @@
 # App for TMDB API
 
 import tmdbsimple as tmdb
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
 
@@ -12,10 +12,18 @@ tmdb.API_KEY = '5de7a0eee27b6eae8c0e543c8ac33ed8'
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    user_search = request.form.get('nm')
-    search = tmdb.Search()
-    response = search.movie(query=user_search)
-    poster_base = 'http://image.tmdb.org/t/p/w300'
-    return render_template('TMDB_testing.html', movies=search.results, last_search=user_search, poster_base=poster_base)
+    return render_template('index.html')
+
+@app.route('/movie_search', methods=['POST', 'GET'])
+def movie_search():
+    if request.method == "POST":
+        user_search = request.form.get('nm')
+        search = tmdb.Search()
+        response = search.movie(query=user_search)
+        poster_base = 'http://image.tmdb.org/t/p/w300'
+        # sort = sorted(response, key=lambda d: d['vote_average'])
+        return render_template('movie_search.html', movies=search.results, last_search=user_search, poster_base=poster_base)
+    else:
+        return render_template('movie_search.html')
 
 

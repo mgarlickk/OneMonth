@@ -16,14 +16,62 @@ body {
 
 input:focus {
     outline: none;
+    display: inline-block;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
 
-/* Search Area */
+
+/* Home Page ::  ------------------------------------------ */
+
+.welcome_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.welcome {
+    padding-top: 5%;
+    align-self: center;
+    font-size: 4em;
+}
+
+.welcome2 {
+    align-self: center;
+    font-size: 2em;
+}
+
+.page_options_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page_options {
+    margin: 50px;
+}
+
+/* Moive Search page :: Search Area ------------------------------------------ */
 
 .container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.home_btn {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.movie_btn {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 100px;
 }
 
 .search_bar {
@@ -65,12 +113,8 @@ input:focus {
     width: 90%;
 }
 
-.movie_info {
+.movie_title_rating {
     font-size: 18pt;
-}
-
-.movie_overview {
-    justify-content: bottom;
 }
 
 
@@ -101,6 +145,10 @@ input:focus {
     border: solid 1px black;
     transition: .4s;
 }
+
+
+
+/* For typical laptop screen size */
 
 @media only screen and (max-width: 1400px) {
     .poster {
