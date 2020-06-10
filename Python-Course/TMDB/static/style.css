@@ -1,4 +1,7 @@
 
+
+/* Shared */
+
 * {
     font-family: calibri, aria, sans-serif;
     color: white;
@@ -15,6 +18,8 @@ input:focus {
     outline: none;
 }
 
+
+/* Search Area */
 
 .container {
     display: flex;
@@ -37,6 +42,9 @@ input:focus {
     flex-basis: 100%;
 }
 
+
+/* Search Results */
+
 .box {
     flex-basis: 33%;
     margin-bottom: 20px;
@@ -44,12 +52,11 @@ input:focus {
 }
 
 .poster {
-    height: 100%;
     border-radius: 5px;
 }
 
 .poster:hover {
-    transform: scale(.95);
+    transform: scale(.97);
     transition: transform 0.5s, opacity 0.3s;
     opacity: 1;
 }
@@ -65,6 +72,9 @@ input:focus {
 .movie_overview {
     justify-content: bottom;
 }
+
+
+/* Buttons */ 
 
 .search_btn {
     background-color: #44bd32;
