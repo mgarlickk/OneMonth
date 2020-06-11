@@ -2,18 +2,43 @@
 {% block content %}
 
 <div class="welcome_container">
-    <div class="welcome">Welcome</div>
-    <div class="welcome2">Please choose an option below</div>
+    <div class="welcome welcome-fade-in">Welcome</div>
+    <div class="welcome2 welcome-fade-in">Please choose a search method below</div>
     <div class="page_options">
 
 </div>
 
+<div class="page_options_titles_container">
+    <div class="page_options_titles page_options_titles">By Title</div>
+    <div class="page_options_titles page_options_titles">By Director</div>
+    <div class="page_options_titles page_options_titles">By Cast</div>
+    <div class="page_options_titles page_options_titles">By Show</div>
+</div>
+
 <div class="page_options_container">
-    <div class="page_options">test </div>
-    <div class="page_options">test </div>
-    <div class="page_options">test </div>
-    <div class="page_options">test </div>
+    <div></div>
+    <div class="page_options page_links titles-fade-in">
+        <a href="/movie_search"><img src="/static/dunkirk.jpg"></a>
+    </div> 
+    <div class="page_options page_links directors-fade-in">
+        <a href="#"><img src="/static/director_tarantino.jpg"></a>
+    </div>
+    <div class="page_options page_links actors-fade-in">
+        <a href="#"><img src="/static/actor_paul2.jpg"></a>
+    </div>
+    <div class="page_options page_links genres-fade-in">
+        <a href="#"><img src="/static/tv_detective.jpg"></a>
+    </div>
 
 </div>
+
+<script>
+    $('.titles_img').waypoint(function(direction){
+        $('.titles_img').addClass('animated fadeInUp');
+    },{
+        offset: '0%'
+    });
+
+</script>
 
 {% endblock %}

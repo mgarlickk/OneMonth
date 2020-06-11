@@ -19,11 +19,19 @@ input:focus {
     display: inline-block;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
+/* Navigation ::  ------------------------------------------ */
+
+.home_btn {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.movie_btn {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 100px;
+}
 
 
 /* Home Page ::  ------------------------------------------ */
@@ -43,16 +51,70 @@ input:focus {
 .welcome2 {
     align-self: center;
     font-size: 2em;
+    margin-bottom: 1.5%;
+}
+
+.page_options_titles_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.page_options_titles {
+    flex-basis: 25%;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 .page_options_container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
 .page_options {
-    margin: 50px;
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.page_links img{
+    border-radius: 20px;
+    height: 200px;
+    width: 200px;
+    opacity: .8;
+}
+
+.page_links img:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.welcome-fade-in {
+    animation: fadeIn ease 1s;
+}
+
+.page_options_titles {
+    animation: fadeIn ease 1s;
+}
+
+.titles-fade-in {
+    animation: fadeIn ease 3s;
+}
+
+.directors-fade-in {
+    animation: fadeIn ease 5s;
+}
+
+.actors-fade-in {
+    animation: fadeIn ease 7s;
+}
+
+.genres-fade-in {
+    animation: fadeIn ease 9s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
 
 /* Moive Search page :: Search Area ------------------------------------------ */
@@ -60,18 +122,7 @@ input:focus {
 .container {
     display: flex;
     flex-wrap: wrap;
-}
-
-.home_btn {
-    position: absolute;
-    margin-left: 50px;
-    margin-top: 50px;
-}
-
-.movie_btn {
-    position: absolute;
-    margin-left: 50px;
-    margin-top: 100px;
+    align-items: center;
 }
 
 .search_bar {
@@ -96,7 +147,6 @@ input:focus {
 .box {
     flex-basis: 33%;
     margin-bottom: 20px;
-    justify-content: center;
 }
 
 .poster {
@@ -107,10 +157,6 @@ input:focus {
     transform: scale(.97);
     transition: transform 0.5s, opacity 0.3s;
     opacity: 1;
-}
-
-.info {
-    width: 90%;
 }
 
 .movie_title_rating {
@@ -151,14 +197,48 @@ input:focus {
 /* For typical laptop screen size */
 
 @media only screen and (max-width: 1400px) {
+
+    .home_btn {
+        position: absolute;
+        margin-left: 25px;
+        margin-top: 25px;
+    }
+    
+    .movie_btn {
+        position: absolute;
+        margin-left: 25px;
+        margin-top: 75px;
+    }
+
     .poster {
-      width: 250px;
-      height: 300px;
+      width: 220px;
+      height: 270px;
     }
     .container {
+        padding-left: 5%;
+        padding-right: 5%;
     }
     .box {
-        flex-basis: 25%
+        flex-basis: 33%
     }
+
+    .page_links img {
+        border-radius: 20px;
+        height: 300px;
+        width: 200px;
+        opacity: .8;
+        transform: scale(1.15);
+        transition: transform 0.5s, opacity 0.3s;
+    }
+    
+    .page_links-links img:hover{
+        opacity: 1;
+        transform: scale(1.02);
+    }
+
+    .welcome {
+        padding-top: 1%;
+    }
+
 
   }
