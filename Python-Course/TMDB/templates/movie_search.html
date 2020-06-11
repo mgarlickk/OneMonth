@@ -10,7 +10,7 @@
             <form action="#" method="post" class="search_form">
                 <p><input required class="search_bar" type="text" name="nm" placeholder="Search By Title..."></p>
                 <p><input class="search_btn" type="submit" name="submit" value="Search"></p>
-                <p>Last Search - "{{ last_search }}"</p>
+                <p class="last_search">Last Search - "{{ last_search }}"</p>
             </form>
                 {% for result in movies %}
                 <div class="box">
@@ -21,9 +21,32 @@
                     {% endif %}
                     <div class="info">
                         <div class="movie_title_rating">{{result['title']}} | {{result['vote_average']}}</div>
-                        <button class="overview_btn" id="show_overview" onclick="showOverview()">Overview</button>
+                        <button type="button" class="overview_btn" id="show_overview" data-toggle="modal" data-target="#modalCart"">Overview</button>
                         <div style="display: none" id="overview" class="overview">{{result['overview']}}</div>
                     </div>
+                    
+                        <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span style="color: black;" aria-hidden="true">×</span>
+                                </button>
+                                <div class="modal-body">
+                                    {% if result['poster_path'] != None %}
+                                        <img class="poster" src="{{ poster_base }}{{ result['poster_path'] }}">
+                                    {% else %}
+                                        <img class="poster" src="/static/placeholder_image_med.png">
+                                    {% endif %}
+                                    <div class="movie_title_rating">{{result['title']}} | {{result['vote_average']}}</div>
+                                    <div  id="overview">{{result['overview']}}</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
                 </div>
                 {% endfor %}
             </div>
