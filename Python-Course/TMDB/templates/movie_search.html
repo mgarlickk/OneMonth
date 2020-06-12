@@ -20,8 +20,7 @@
                         <img class="poster" src="/static/placeholder_image_med.png">
                     {% endif %}
                     <div class="info">
-                        <div class="movie_title_rating">{{result['title']}} | {{result['vote_average']}}</div>
-                        <button type="button" class="overview_btn" id="show_overview" data-toggle="modal" data-target="#modalCart"">Overview</button>
+                        <button type="button" class="overview_btn" id="show_overview" data-toggle="modal" data-target="#modalCart">Overview</button>
                         <div style="display: none" id="overview" class="overview">{{result['overview']}}</div>
                     </div>
                     
@@ -40,7 +39,7 @@
                                         <img class="poster" src="/static/placeholder_image_med.png">
                                     {% endif %}
                                     <div class="movie_title_rating">{{result['title']}} | {{result['vote_average']}}</div>
-                                    <div  id="overview">{{result['overview']}}</div>
+                                    <div id="overview">{{result['overview']}}</div>
                                 </div>
                             </div>
                             </div>
@@ -49,7 +48,6 @@
 
                 </div>
                 {% endfor %}
-            </div>
         </div>
         <script>
             count_movies = document.getElementsByClassName('overview');

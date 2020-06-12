@@ -130,7 +130,10 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    flex-direction: row;
 }
+
+
 
 .search_bar {
     border-radius: 5px;
@@ -141,7 +144,7 @@ input:focus {
     color: white;
 }
 
-..search_bar:focus {
+.search_bar:focus {
     color: white;
 }
 
@@ -162,6 +165,7 @@ input:focus {
 .box {
     flex-basis: 33%;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .poster {
@@ -176,7 +180,6 @@ input:focus {
 
 .movie_title_rating {
     font-size: 18pt;
-    color: white;
 }
 
 .modal {
@@ -202,10 +205,11 @@ input:focus {
 
 .overview_btn {
     background-color: #487eb0;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border: 1px solid #487eb0;
     height: 30px;
-    width: 30%;
+    width: 200px;
     color: white;
 }
 
@@ -234,16 +238,22 @@ input:focus {
         margin-top: 75px;
     }
 
+    .overview_btn {
+        width: 240px;
+    }
+
     .poster {
-      width: 220px;
-      height: 270px;
+      width: 240px;
+      height: 300px;
     }
     .container {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 20%;
     }
     .box {
-        flex-basis: 33%
+        flex-basis: 33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .page_links img {
