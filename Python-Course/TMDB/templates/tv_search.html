@@ -2,7 +2,7 @@
 {% block content %}
 <style>
     body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url("/static/hot_fuzz.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url("/static/thrones.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -22,11 +22,11 @@
         </a>
         <div class="container">
             <form action="#" method="post" class="search_form">
-                <p><input required class="search_bar" type="text" name="nm" placeholder="Search By Movie Title..."></p>
+                <p><input required class="search_bar" type="text" name="nm" placeholder="Search By Show Title..."></p>
                 <p><input class="search_btn" type="submit" name="submit" value="Search"></p>
                 <p class="last_search">Last Search - "{{ last_search }}"</p>
             </form>
-                {% for result in movies %}
+                {% for result in shows %}
                 <div class="box">
                     {% if result['poster_path'] != None %}
                         <img class="poster" src="{{ poster_base }}{{ result['poster_path'] }}">
@@ -35,29 +35,30 @@
                     {% endif %}
                     <div class="info">
                         <button type="button" class="overview_btn" id="show_overview" data-toggle="modal" data-target="#modalDetails">Overview</button>
-                        <!-- <div style="display: none" id="overview" class="overview">{{result['overview']}}</div> -->
+                        <div style="display: none" id="overview" class="overview">{{result['overview']}}</div>
                     </div>
-                    <div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                        <div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span style="color: black;" aria-hidden="true">×</span>
-                                    </button>
-                                    <div class="modal-body">
-                                        {% if result['poster_path'] != None %}
-                                            <img class="poster" src="{{ poster_base }}{{ result['poster_path'] }}">
-                                        {% else %}
-                                            <img class="poster" src="/static/placeholder_image_med.png">
-                                        {% endif %}
-                                        <div class="movie_title_rating">{{result['title']}} | {{result['vote_average']}}</div>
-                                        <div id="overview">{{result['overview']}}</div>
-                                    </div>
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span style="color: black;" aria-hidden="true">×</span>
+                                </button>
+                                <div class="modal-body">
+                                    {% if result['poster_path'] != None %}
+                                        <img class="poster" src="{{ poster_base }}{{ result['poster_path'] }}">
+                                    {% else %}
+                                        <img class="poster" src="/static/placeholder_image_med.png">
+                                    {% endif %}
+                                    <div class="movie_title_rating">{{result['name']}} | {{result['vote_average']}}</div>
+                                    <div id="overview">{{result['overview']}}</div>
                                 </div>
                             </div>
+                            </div>
                         </div>
-                    </div>
+                        </div>
+
                 </div>
                 {% endfor %}
         </div>
@@ -69,7 +70,6 @@
                     var movie_overview = document.querySelector('.overview');
                     if (movie_overview.style.display === 'none'){
                         movie_overview.style.display = 'block';
-                        
                     } else {
                         movie_overview.style.display = 'none';
                     }
