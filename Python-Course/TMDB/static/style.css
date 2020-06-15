@@ -7,8 +7,6 @@
     
 }
 
-
-
 input:focus {
     outline: none;
     display: inline-block;
@@ -150,11 +148,14 @@ input:focus {
     width: 500px;
 }
 
+.search_bar:focus {
+    color: white;
+}
 
 .search_bar::placeholder {
-    color: white;
     opacity: .3;
 }
+
 .search_form {
     width: 100%;
 }
@@ -177,7 +178,7 @@ input:focus {
 }
 
 .poster:hover {
-    transform: scale(.97);
+    transform: scale(.98);
     transition: transform 0.5s, opacity 0.3s;
     opacity: 1;
 }
@@ -255,7 +256,7 @@ input:focus {
     }
     
     .tv_btn {
-        margin-left: 50px;
+        margin-left: 25px;
         margin-top: 175px;
     }
 
@@ -267,9 +268,7 @@ input:focus {
       width: 240px;
       height: 300px;
     }
-    .container {
-        padding-left: 20%;
-    }
+
     .box {
         flex-basis: 33%;
         display: flex;
@@ -285,6 +284,5 @@ input:focus {
     .welcome {
         padding-top: 1%;
     }
-
 
   }

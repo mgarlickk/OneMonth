@@ -34,7 +34,7 @@
                         <img class="poster" src="/static/placeholder_image_med.png">
                     {% endif %}
                     <div class="info">
-                        <button type="button" class="overview_btn" id="show_overview" data-toggle="modal" data-target="#modalDetails">Overview</button>
+                        <button type="button" class="overview_btn" data-toggle="modal" data-target="#modalDetails">Overview</button>
                         <!-- <div style="display: none" id="overview" class="overview">{{result['overview']}}</div> -->
                     </div>
                     <div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -62,6 +62,7 @@
                 {% endfor %}
         </div>
         <script>
+            /*
             count_movies = document.getElementsByClassName('overview');
             console.log(count_movies.length);
             function showOverview(){
@@ -76,5 +77,6 @@
                 }
             }
             //count_movies.forEach(showOverview)
+            */
         </script>
 {% endblock %}
