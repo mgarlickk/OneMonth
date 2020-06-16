@@ -22,7 +22,7 @@ def movie_search():
         response = search.movie(query=user_search)
         poster_base = 'http://image.tmdb.org/t/p/w300'
         # sort = sorted(response, key=lambda d: d['vote_average'])
-        return render_template('movie_search.html', movies=search.results, last_search=user_search, poster_base=poster_base, modal_id=modal_id)
+        return render_template('movie_search.html', movies=search.results, last_search=user_search, poster_base=poster_base)
     else:
         return render_template('movie_search.html')
 
