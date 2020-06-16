@@ -12,6 +12,10 @@ input:focus {
     display: inline-block;
 }
 
+.modal-backdrop {
+    width: 100% !important;
+    height: 100% !important;
+  }
 
 /* Navigation ::  ------------------------------------------ */
 
@@ -193,7 +197,8 @@ input:focus {
 }
 
 .modal-backdrop {
-    background-color: green;
+    height: 100%;
+    width: 100%;
 }
 
 .close-modal {
