@@ -14,7 +14,42 @@
     {{ state }}<br>
     {% endfor %}
     -->
+
+    <div id='container'>
+        <button id='add-button' onclick="addElement()">Add element</button>
+
+    </div>
      
 
 {% endblock %}
+
+<script>
+
+    // Keep form resubmissions from happening
+    if (window.history.replaceState) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+
+    var container = document.getElementById('container');
+    function addElement() {
+        var newDiv = document.createElement('div');
+        var deleteButton = document.createElement('button');
+        newDiv.innerHTML = "YOOO";
+        deleteButton.innerHTML = 'DELETE';
+        deleteButton.classList.add('test-delete')
+        container.append(newDiv, deleteButton);
+        deleteButton.onclick = function () {
+            newDiv.remove();
+            deleteButton.remove();
+    };
+    }
+/*
+    function removeElement() {
+        var deleteButton = document.getElementById('test');
+        deleteButton.parentNode.removeChild(newDiv);
+        return false;
+    }
+*/
+
+</script>
 
