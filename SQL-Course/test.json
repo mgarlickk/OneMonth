@@ -1,0 +1,62 @@
+[
+    {
+      "externalAssessmentId": "00000000-0000-0000-0000-000000000000",
+      "versionNumber": 0,
+      "name": "string",
+      "thirdPartyId": "string",
+      "authVersion": 0,
+      "instrumentType": 0,
+      "supportedLanguageCodes": [
+        "string"
+      ],
+      "demographics": [
+        {
+          "externalDemographicId": "00000000-0000-0000-0000-000000000000",
+          "name": "string",
+          "thirdPartyId": "string",
+          "content": "string",
+          "defaultText": "string",
+          "questionType": 1,
+          "isRequired": true,
+          "sequence": 0,
+          "deliveryType": 1,
+          "isLegacy": true,
+          "options": [
+            {
+              "externalDemographicOptionId": "00000000-0000-0000-0000-000000000000",
+              "reportText": "string",
+              "thirdPartyId": "string",
+              "content": "string",
+              "answerLabel": "string",
+              "sequence": 0,
+              "is360SubjectRole": true,
+              "minRatersRequired": 0
+            }
+          ]
+        }
+      ],
+      "norms": [
+        {
+          "externalNormId": "00000000-0000-0000-0000-000000000000",
+          "name": "string"
+        }
+      ],
+      "scoreReports": [
+        {
+          "externalScoreReportId": "00000000-0000-0000-0000-000000000000",
+          "reportName": "string",
+          "thirdPartyId": "string",
+          "scoreReportType": 0,
+          "audience": 1,
+          "defaultMimeType": "string",
+          "defaultLanguageCode": "string",
+          "supportedLanguageCodes": [
+            "string"
+          ],
+          "supportedFormats": [
+            "string"
+          ]
+        }
+      ]
+    }
+  ]
